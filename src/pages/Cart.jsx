@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { pizzas as initialPizzas } from "../../pizzas";
+import { pizzas as initialPizzas } from "../pizzas";
 
 export default function Cart() {
   const [listPizza, setListPizza] = useState(

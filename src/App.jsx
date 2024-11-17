@@ -1,12 +1,15 @@
 import { useState } from "react";
 import "./App.css";
-import Navbar from "./component/Navbar/Navbar";
-import Home from "./component/Home/Home";
-import Pizza from "./component/CardPizza/Pizza";
+import Navbar from "./pages/Navbar";
+import Home from "./pages/Home";
+import Pizza from "./pages/Pizza";
 import Footer from "./component/Footer/Footer";
-import RegisterPage from "./component/Register/RegisterPage";
-import LoginPage from "./component/Register/LoginPage";
-import Cart from "./component/Home/Cart";
+import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage";
+import Cart from "./pages/Cart";
+import Profile from "./pages/Profile";
+import NotFound from "./pages/NotFound";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,12 +17,15 @@ function App() {
   return (
     <>
       <Navbar />
-      <Home />
-      {/* <RegisterPage />
-      <LoginPage />
-      <Cart />*/}
-      <Pizza />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/pizza/p001" element={<Pizza />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
