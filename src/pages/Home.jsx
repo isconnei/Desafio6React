@@ -10,14 +10,14 @@ export default function Home() {
   }, []);
 
   const pizzaRequest = async () => {
-    const URL = "http://localhost:5232/api/pizzas";
+    const URL = "http://localhost:5289/api/pizzas";
     try {
       const response = await fetch(URL);
       if (!response.ok) {
         throw new Error(`Error ${response.status}: ${response.statusText}`);
       }
       const pizzas = await response.json();
-      setListPizza(pizzas); // Actualiza el estado con los datos obtenidos
+      setListPizza(pizzas);
     } catch (error) {
       console.error("Error al obtener las pizzas:", error.message);
     }

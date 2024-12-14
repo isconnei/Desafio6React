@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { CartContext } from "../../context/cartContext";
+
 export default function CardPizza({ pizza }) {
+  const { addPizza } = useContext(CartContext);
+
   return (
     <div className="col-md-4 mb-3">
       <div className="card">
@@ -12,9 +17,9 @@ export default function CardPizza({ pizza }) {
             <a href="#" className="btn btn-primary">
               Ver más
             </a>
-            <a href="#" className="btn btn-success">
+            <button className="btn btn-success" onClick={() => addPizza(pizza)}>
               Añadir
-            </a>
+            </button>
           </div>
         </div>
       </div>

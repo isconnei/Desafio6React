@@ -8,7 +8,7 @@ export default function Pizza() {
   }, []);
 
   const pizzaRequest = async () => {
-    const URL = "http://localhost:5232/api/pizzas/p001";
+    const URL = "http://localhost:5289/api/pizzas/p001";
     try {
       const response = await fetch(URL);
       if (!response.ok) {

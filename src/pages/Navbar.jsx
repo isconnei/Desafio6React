@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../context/cartContext";
 
 export default function Navbar() {
-  const total = 25000;
   const token = false;
+  const { total } = useContext(CartContext);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
